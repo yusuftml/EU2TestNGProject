@@ -29,7 +29,5 @@ public class CloseAndQuit {
         driver.quit();
 
 
-
-
     }
 }
