@@ -51,6 +51,7 @@ public class verifyConfirmationMessage {
         retrievePasswordButton.click();
 
 
+
         //verify confirmation message
         WebElement actualConfirmationMessage = driver.findElement(By.name("confirmation_message"));
 
@@ -71,7 +72,6 @@ public class verifyConfirmationMessage {
 
         //close the browser
         driver.quit();
-
 
     }
 }
