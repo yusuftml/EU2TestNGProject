@@ -23,7 +23,6 @@ public class DisabledElements {
         Assert.assertFalse(greenRadioButton.isEnabled(),"Verify Green is NOT enabled");
 
         greenRadioButton.click();
-
     }
 
     @Test
