@@ -36,7 +36,7 @@ public class SelectClassTest {
     }
 
     @Test
-    public void test2(){
+    public void test2() throws InterruptedException {
         WebDriver driver = WebDriverFactory.getDriver("chrome");
         driver.get("http://practice.cybertekschool.com/dropdown");
 
@@ -48,10 +48,35 @@ public class SelectClassTest {
 
         //verify that first selection is Select a state
         String expectedOption = "Select a State";
-        String actualSelection = stateDropdown.getFirstSelectedOption().getText();
-        Assert.assertEquals(actualSelection,expectedOption,"verify first selection");
+        String actualOption = stateDropdown.getFirstSelectedOption().getText();
+        Assert.assertEquals(actualOption,expectedOption,"verify first selection");
 
-        //HOW TO SELECT OPTIONS FROM DROPDOWN ?  (SUNDAY)
+        //HOW TO SELECT OPTIONS FROM DROPDOWN ?
+        //1.SELECT USING VISIBLE TEXT
+        Thread.sleep(2000);
+        stateDropdown.selectByVisibleText("Virginia");
 
+        expectedOption = "Virginia";
+        actualOption = stateDropdown.getFirstSelectedOption().getText();
+        Assert.assertEquals(actualOption,expectedOption);
+
+        //2.SELECT USING INDEX
+        Thread.sleep(2000);
+        stateDropdown.selectByIndex(51);
+
+        expectedOption = "Wyoming";
+        actualOption = stateDropdown.getFirstSelectedOption().getText();
+        Assert.assertEquals(actualOption,expectedOption);
+
+
+        //3.SELECT BY VALUE
+        Thread.sleep(2000);
+        stateDropdown.selectByValue("DC");
+        expectedOption = "District Of Columbia";
+        actualOption = stateDropdown.getFirstSelectedOption().getText();
+        Assert.assertEquals(actualOption,expectedOption);
+
+        Thread.sleep(2000);
+        driver.quit();
     }
 }
