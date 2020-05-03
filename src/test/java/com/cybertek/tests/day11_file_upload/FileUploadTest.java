@@ -46,8 +46,6 @@ public class FileUploadTest {
         //verify file name is file.txt
         Assert.assertEquals(actualFilename,"file.txt");
 
-
-
     }
 
     @Test
@@ -59,6 +57,7 @@ public class FileUploadTest {
         String projectPath = System.getProperty("user.dir");
         String relativePath = "src/test/resources/testfile.txt";
         String filePath = projectPath+"/"+relativePath;
+
         chooseFile.sendKeys(filePath);
         //clicking upload button
         driver.findElement(By.id("file-submit")).click();
@@ -66,10 +65,7 @@ public class FileUploadTest {
         //getting name of the file
         String actualFilename = driver.findElement(By.id("uploaded-files")).getText();
         //verify file name is file.txt
-        Assert.assertEquals(actualFilename,"file.txt");
-
-
-
+        Assert.assertEquals(actualFilename,"testfile.txt");
     }
 
 
