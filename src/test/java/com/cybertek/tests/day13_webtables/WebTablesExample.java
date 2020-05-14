@@ -115,7 +115,7 @@ public class WebTablesExample {
         System.out.println("colNumber = " + colNumber);
         System.out.println("rowNumber = " + rowNumber);
 
-        //iterate through each row on the table
+        //iterate through each rgiw on the table
         for (int i = 1; i <=rowNumber ; i++) {
 
             //iterate through each cell for each row
