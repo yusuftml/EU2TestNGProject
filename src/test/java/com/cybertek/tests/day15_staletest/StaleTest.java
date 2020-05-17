@@ -22,7 +22,7 @@ public class StaleTest extends TestBase {
 
         //go to google again
         driver.navigate().back();
-       // input = driver.findElement(By.name("q"));
+        input = driver.findElement(By.name("q"));
         input.sendKeys("Java"+Keys.ENTER);
         results = driver.findElement(By.id("result-stats"));
 
