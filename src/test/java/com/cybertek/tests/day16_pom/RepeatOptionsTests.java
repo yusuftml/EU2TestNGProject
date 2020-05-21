@@ -60,8 +60,8 @@ public class RepeatOptionsTests extends TestBase {
         Open browser
         Login as driver
         Go to Activities->Calendar Events
-        Click on create calendar events
-        Click on repeat
+        Click on create calendar events button
+        Click on repeat checkbox
         Verify that repeat options are Daily, Weekly, Monthly,Yearly(in this order)
      */
 
@@ -96,8 +96,9 @@ public class RepeatOptionsTests extends TestBase {
                 actualList.add(option.getText());
             }
 
-            //getting list with ready method
+            //another way of getting list with ready method
             List<String> actualList2 = BrowserUtils.getElementsText(actualOptions);
+
 
             Assert.assertEquals(actualList,expectedList,"verify dropdown options");
 
